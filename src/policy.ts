@@ -19,7 +19,7 @@ export const policy = {
   // Download links shown on the home page. Leave a URL empty and its tile
   // renders as "Coming soon" instead of a dead link.
   chromeExtensionUrl: 'https://chromewebstore.google.com/detail/otp-relay/mcdceaimlomaaobggokdpknnbldhmncd',
-  apkUrl: '',
+  apkUrl: '/otp-relay-0.8.apk',
 
   otpRetentionHours: 24,
   deviceInactivityDays: 90,

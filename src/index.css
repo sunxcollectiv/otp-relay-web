@@ -114,6 +114,58 @@ li + li {
 
 /* Home */
 
+.downloads {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.download {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem 1.125rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.625rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.download:hover {
+  border-color: var(--fg);
+  text-decoration: none;
+}
+
+.download-pending {
+  color: var(--muted);
+}
+
+.download-icon {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.download-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.download-text strong {
+  font-weight: 600;
+}
+
+.download-text .muted {
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 480px) {
+  .downloads {
+    grid-template-columns: 1fr;
+  }
+}
+
 .steps {
   list-style: none;
   padding: 0;

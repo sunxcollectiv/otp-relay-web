@@ -1,5 +1,82 @@
 import { Link } from '../router'
+import type { ReactNode } from 'react'
 import { policy } from '../policy'
+
+function DownloadTile({
+  href,
+  title,
+  note,
+  icon,
+  download,
+}: {
+  href: string
+  title: string
+  note: string
+  icon: ReactNode
+  download?: boolean
+}) {
+  const body = (
+    <>
+      <span className="download-icon" aria-hidden="true">
+        {icon}
+      </span>
+      <span className="download-text">
+        <strong>{title}</strong>
+        <span className="muted">{href ? note : 'Coming soon'}</span>
+      </span>
+    </>
+  )
+  if (!href) {
+    return <div className="download download-pending">{body}</div>
+  }
+  return (
+    <a
+      className="download"
+      href={href}
+      download={download || undefined}
+      target={download ? undefined : '_blank'}
+      rel={download ? undefined : 'noreferrer'}
+    >
+      {body}
+    </a>
+  )
+}
+
+function PuzzleIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="28"
+      height="28"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M10 4a2 2 0 0 1 4 0v1h4a1 1 0 0 1 1 1v4h-1a2 2 0 0 0 0 4h1v4a1 1 0 0 1-1 1h-4v-1a2 2 0 0 0-4 0v1H6a1 1 0 0 1-1-1v-4h1a2 2 0 0 0 0-4H5V6a1 1 0 0 1 1-1h4V4z" />
+    </svg>
+  )
+}
+
+function PhoneIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="28"
+      height="28"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
+      <path d="M12 8v7M9 12.5l3 3 3-3" />
+      <path d="M10.5 18.5h3" />
+    </svg>
+  )
+}
 
 export default function Home() {
   return (
@@ -10,6 +87,22 @@ export default function Home() {
           One-time passcodes arrive on your phone. You need them on your computer.{' '}
           {policy.appName} moves them across and types them in for you.
         </p>
+
+        <div className="downloads">
+          <DownloadTile
+            href={policy.chromeExtensionUrl}
+            title="Browser extension"
+            note="Chrome Web Store"
+            icon={<PuzzleIcon />}
+          />
+          <DownloadTile
+            href={policy.apkUrl}
+            title="Android app"
+            note="Download APK"
+            icon={<PhoneIcon />}
+            download
+          />
+        </div>
 
         <ol className="steps">
           <li>

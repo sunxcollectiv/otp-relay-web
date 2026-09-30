@@ -16,6 +16,11 @@ export const policy = {
   contactEmail: 'privacy@otp-relay.app',
   effectiveDate: '26 September 2026',
 
+  // Download links shown on the home page. Leave a URL empty and its tile
+  // renders as "Coming soon" instead of a dead link.
+  chromeExtensionUrl: 'https://chromewebstore.google.com/detail/otp-relay/mcdceaimlomaaobggokdpknnbldhmncd',
+  apkUrl: '',
+
   otpRetentionHours: 24,
   deviceInactivityDays: 90,
   sessionDays: 30,

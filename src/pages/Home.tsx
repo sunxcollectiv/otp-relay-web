@@ -103,6 +103,7 @@ export default function Home() {
             download
           />
         </div>
+        <p className="pricing">Free to try for 1 month, then only $5/year</p>
 
         <ol className="steps">
           <li>

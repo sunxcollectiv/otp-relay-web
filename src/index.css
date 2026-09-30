@@ -3,6 +3,7 @@
   --bg: #fff;
   --muted: #666;
   --rule: #e5e5e5;
+  --accent: #3b82f6;
   --measure: 38rem;
   color-scheme: light dark;
 }
@@ -13,6 +14,7 @@
     --bg: #000;
     --muted: #999;
     --rule: #262626;
+    --accent: #7cb8ff;
   }
 }
 
@@ -157,6 +159,12 @@ a.download:hover {
 }
 
 .download-text .muted {
+  font-size: 0.9375rem;
+}
+
+.pricing {
+  margin: 0.875rem 0 0;
+  color: var(--accent);
   font-size: 0.9375rem;
 }
 

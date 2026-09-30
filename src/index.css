@@ -1,21 +1,11 @@
 :root {
-  --fg: #000;
-  --bg: #fff;
-  --muted: #666;
-  --rule: #e5e5e5;
-  --accent: #3b82f6;
+  --fg: #fff;
+  --bg: #000;
+  --muted: #999;
+  --rule: #262626;
+  --accent: #7cb8ff;
   --measure: 38rem;
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fg: #fff;
-    --bg: #000;
-    --muted: #999;
-    --rule: #262626;
-    --accent: #7cb8ff;
-  }
+  color-scheme: dark;
 }
 
 *,
